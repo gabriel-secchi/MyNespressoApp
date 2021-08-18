@@ -66,7 +66,8 @@ class ListViewCoffe extends Component {
                 renderItem={ListItem}
                 keyExtractor={item => item.id}
                 refreshing={this.state.refreshing}
-                onRefresh={onRefresh} />
+                onRefresh={onRefresh}
+                keyboardShouldPersistTaps='handled' />
         );
     }
 }

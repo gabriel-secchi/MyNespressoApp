@@ -6,19 +6,20 @@ import { NativeBaseProvider } from 'native-base'
 import Icon from 'react-native-vector-icons/AntDesign'
 
 import CoffeCupsDescription from './CoffeCupsDescription'
+import CoffeRateForm from './CoffeRateForm'
 import Colors from '../../../resources/colors'
 
 
 const CoffeRate = (props) => {
     const [modalVisible, setModalVisible] = React.useState(false);
 
-    let {cupSize} = props
+    //let {cupSize} = props
     
     return(
         <NativeBaseProvider>
             <View style={styles.panel}>
-                <CoffeCupsDescription isVisible={modalVisible} setVisible={setModalVisible} cupSize={2} />
-                <TouchableOpacity style={styles.buttonRate}>
+                <CoffeRateForm isVisible={modalVisible} setVisible={setModalVisible} />
+                <TouchableOpacity style={styles.buttonRate} onPress={() => {setModalVisible(!modalVisible)}}>
                     <Icon name="hearto" size={30} color={Colors.primaryTextColor} />
                 </TouchableOpacity>
             </View>
@@ -31,8 +32,8 @@ const CoffeRate = (props) => {
 
 const styles = StyleSheet.create({
     panel: {
-        //position: 'absolute', 
-        alignSelf: 'flex-end'
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     },
     buttonRate: {
         borderRadius: 25,

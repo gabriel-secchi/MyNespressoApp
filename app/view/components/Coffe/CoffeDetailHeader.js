@@ -12,7 +12,7 @@ const CoffeDetailHeader = ({coffeItem}) => {
     return (
         <View style={styles.panelCoffeDetailHeader}>
             <CoffeCups cupSize={coffeItem.cup_size} />
-            <CoffeRate />
+            <CoffeRate cupSize={coffeItem.cup_size}/> 
         </View>
     )
 }

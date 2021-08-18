@@ -40,10 +40,14 @@ const getCup = (size, active) => {
 }
 
 const styles = StyleSheet.create({
+    panel: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+    },
     panelCups: {
-        flexDirection: 'row', 
+        flexDirection: 'row',
         alignItems: 'center'
-      },
+    },
     cup: {
         marginRight: 10
     },
