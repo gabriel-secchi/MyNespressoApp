@@ -11,7 +11,7 @@ import Colors from '../../../resources/colors'
 
 const CoffeCupsDescription = ({isVisible, setVisible, cupSize}) => {
     return(
-        <Popup isVisible={isVisible} setVisible={setVisible} title="Tamanho ideal para seu café">
+        <Popup isVisible={isVisible} setVisible={setVisible} title="Tamanho ideal para seu café" maxWidth='80%'>
             <View style={styles.lineCup}>
                 {getCupItem(cupSize.ristretto, 18, 'Ristretto')}
                 <Text style={styles.cupDesc}>(25 ml)</Text>

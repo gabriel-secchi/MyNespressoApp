@@ -7,8 +7,19 @@ const IconFA = require('react-native-vector-icons/FontAwesome').default
 const IconI = require('react-native-vector-icons/Ionicons').default
 
 import Colors from '../../resources/colors'
+const Popup = (props) => {
+    const {
+        isVisible, 
+        setVisible, 
+        title, 
+        children
+    } = props
 
-const Popup = ({isVisible, setVisible, title, children}) => {
+    let { maxWidth } = props
+
+    if(maxWidth === undefined)
+        maxWidth = '90%'
+
     return(
         <Modal animationType='fade'
             transparent={true}
@@ -18,7 +29,7 @@ const Popup = ({isVisible, setVisible, title, children}) => {
             }}
         >
             <View style={styles.screenOpacity}>
-                <View style={styles.popupPanel}>
+                <View style={[styles.popupPanel, {width: maxWidth}]}>
                     <TouchableOpacity style={styles.popupCloseButton} onPress={() => {setVisible(!isVisible)}}>
                         <IconI name="close" size={25} color={Colors.primaryTextColorInverse} />
                     </TouchableOpacity>
@@ -40,7 +51,6 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.blackOpacity,
     },
     popupPanel: {
-        width: '80%',
         padding: 20,
         borderRadius: 4,
         backgroundColor: Colors.primaryPanelComponents,
